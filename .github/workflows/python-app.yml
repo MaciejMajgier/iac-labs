@@ -39,7 +39,7 @@ jobs:
 
     runs-on: ubuntu-latest
     concurrency:
-      group: some-group-name
+      group: analyzys
     
     defaults:
       run:
@@ -70,7 +70,7 @@ jobs:
 
     runs-on: ubuntu-latest
     concurrency:
-      group: some-group-name
+      group: analyzyz
     
     defaults:
       run:
@@ -100,7 +100,7 @@ jobs:
 
     runs-on: ubuntu-latest
     concurrency:
-      group: some-group-name
+      group: analyzyz
     
     defaults:
       run:
