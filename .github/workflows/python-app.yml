@@ -30,10 +30,16 @@ jobs:
         
     - name: Install Poetry Action
       uses: snok/install-poetry@v1.3.3
+      with: 
+            virtualenvs-create: true
+            virtualenvs-in-project: true
 
-    - name: Install dependencies
-      run: |
-        poetry install --no-root
+    - name: Cache build venv
+      id: cached-poetry-dependencies
+      uses: actions/cache@v3
+      with:
+        path: /home/runner/work/iac-labs/iac-labs/example-app/.venv
+        key: ${{ runner.os }}-venv
   
   lint:
 
@@ -56,9 +62,12 @@ jobs:
     - name: Install Poetry Action
       uses: snok/install-poetry@v1.3.3
       
-    - name: Install dependencies
-      run: |
-        poetry install --no-root
+    - name: Cache build venv
+      id: cached-poetry-dependencies
+      uses: actions/cache@v3
+      with:
+        path: /home/runner/work/iac-labs/iac-labs/example-app/.venv
+        key: ${{ runner.os }}-venv
     
     - name: Lint with flake8
       run: |
@@ -88,9 +97,12 @@ jobs:
     - name: Install Poetry Action
       uses: snok/install-poetry@v1.3.3
       
-    - name: Install dependencies
-      run: |
-        poetry install --no-root
+    - name: Cache build venv
+      id: cached-poetry-dependencies
+      uses: actions/cache@v3
+      with:
+        path: /home/runner/work/iac-labs/iac-labs/example-app/.venv
+        key: ${{ runner.os }}-venv
         
            
     - name: formatter
@@ -119,9 +131,12 @@ jobs:
     - name: Install Poetry Action
       uses: snok/install-poetry@v1.3.3
       
-    - name: Install dependencies
-      run: |
-        poetry install --no-root
+    - name: Cache build venv
+      id: cached-poetry-dependencies
+      uses: actions/cache@v3
+      with:
+        path: /home/runner/work/iac-labs/iac-labs/example-app/.venv
+        key: ${{ runner.os }}-venv
         
     - name: security
       run: |
@@ -147,9 +162,12 @@ jobs:
     - name: Install Poetry Action
       uses: snok/install-poetry@v1.3.3 
       
-    - name: Install dependencies
-      run: |
-        poetry install --no-root
+    - name: Cache build venv
+      id: cached-poetry-dependencies
+      uses: actions/cache@v3
+      with:
+        path: /home/runner/work/iac-labs/iac-labs/example-app/.venv
+        key: ${{ runner.os }}-venv
         
     - name: Test with pytest
       run: |
