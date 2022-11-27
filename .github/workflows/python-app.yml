@@ -72,7 +72,7 @@ jobs:
     
     - name: Lint with flake8
       run: |
-        poetry run task lint
+        source $VENV poetry run task lint
         
   
         
@@ -108,7 +108,7 @@ jobs:
            
     - name: formatter
       run: |
-        poetry run task formatter
+        source $VENV poetry run task formatter
         
         
   security:
@@ -141,7 +141,7 @@ jobs:
         
     - name: security
       run: |
-        poetry run task security
+        source $VENV poetry run task security
         
          
   unittests:
@@ -172,4 +172,4 @@ jobs:
         
     - name: Test with pytest
       run: |
-        poetry run task test
+        source $VENV poetry run task test
